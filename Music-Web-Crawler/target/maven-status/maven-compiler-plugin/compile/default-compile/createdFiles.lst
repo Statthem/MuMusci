@@ -1,0 +1,7 @@
+com\mymusic\thief\entities\Album.class
+com\mymusic\thief\entities\Artist.class
+com\mymusic\thief\entities\SoundTrack.class
+com\mymusic\thief\utils\HibernateUtils.class
+com\mymusic\thief\utils\JsoupUtils.class
+com\mymusic\thief\entities\Song.class
+com\mymusic\thief\utils\DateUtils.class

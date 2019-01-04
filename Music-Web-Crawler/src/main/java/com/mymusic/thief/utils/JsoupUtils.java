@@ -1,4 +1,4 @@
-package utils;
+package com.mymusic.thief.utils;
 
 import java.io.File;
 import java.io.IOException;

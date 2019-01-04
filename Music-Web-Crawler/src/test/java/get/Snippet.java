@@ -1,54 +1,25 @@
 package get;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertThat;
-
-import java.io.BufferedWriter;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.sql.Date;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.Map;
 import java.util.Optional;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorCompletionService;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
-
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.junit.Before;
 import org.junit.Test;
 
-import enities.Album;
-import enities.Artist;
-import enities.Song;
-import enities.SoundTrack;
-import utils.DateUtils;
-import utils.HibernateUtils;
-import utils.JsoupUtils;
+import  com.mymusic.thief.entities.Album ; 
+import com.mymusic.thief.entities.Artist;
+import com.mymusic.thief.entities.Song;
+import com.mymusic.thief.entities.SoundTrack;
+import com.mymusic.thief.utils.DateUtils;
+import com.mymusic.thief.utils.HibernateUtils;
+import com.mymusic.thief.utils.JsoupUtils;
 
 public class Snippet {
 
@@ -69,17 +40,14 @@ public class Snippet {
 	
 	@Test
 	public void testRunner() throws IOException {
-		
-		
 		String baseURL = "http://" + DOMAIN_NAME + "/Artist";
 		initialConnect(baseURL);
 	}
 
 	public void initialConnect(String baseURL) throws IOException {
-
 		Elements allElements = getAllElements(baseURL);
 		int totalPageAmount = getTotalPageAmount(allElements);
-		System.out.println(totalPageAmount);
+
 		Elements allArtists = new Elements(totalPageAmount * 100);
 		allArtists = collectAll(allElements, totalPageAmount, allArtists);
 		List<Artist> allCollectedArtists = new ArrayList<>(1000);

@@ -1,4 +1,4 @@
-package enities;
+package com.mymusic.thief.entities;
 
 import java.sql.Date;
 import java.util.ArrayList;

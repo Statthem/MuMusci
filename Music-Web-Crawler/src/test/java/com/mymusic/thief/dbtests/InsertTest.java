@@ -1,18 +1,22 @@
-package dbTest;
+package com.mymusic.thief.dbtests;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.hibernate.Session;
 import org.junit.Test;
 
-import enities.Album;
-import enities.Artist;
-import enities.Song;
-import enities.SoundTrack;
-import utils.HibernateUtils;
+import com.mymusic.thief.entities.Album; 
+import com.mymusic.thief.entities.Artist;
+import com.mymusic.thief.entities.Song;
+import com.mymusic.thief.entities.SoundTrack;
+import com.mymusic.thief.utils.HibernateUtils;
+
+
+
+
+
+
 
 public class InsertTest {
 

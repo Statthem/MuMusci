@@ -1,4 +1,4 @@
-package enities;
+package com.mymusic.thief.entities;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

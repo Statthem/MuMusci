@@ -1,4 +1,4 @@
-package dbTest;
+package com.mymusic.thief.dbtests;
 
 import java.util.List;
 
@@ -6,13 +6,12 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.junit.Test;
 
-import enities.Album;
-import utils.HibernateUtils;
+import com.mymusic.thief.entities.Album; 
+import com.mymusic.thief.utils.HibernateUtils;
 
 public class SelextTest {
 	
@@ -30,7 +29,7 @@ public class SelextTest {
 		CriteriaBuilder builder = session.getCriteriaBuilder();
 		CriteriaQuery<Album> query = builder.createQuery(Album.class);
 		Root<Album> root = query.from(Album.class);
-		query.select(root).where(builder.equal(root.get("albumTitle"), "TestAlbum1"));
+		query.select(root).where(builder.equal(root.get("albumTitle"), "Almost Famous"));
 		Query<Album> q = session.createQuery(query);
 		List<Album> list = q.getResultList();
 		System.out.println(list.size());

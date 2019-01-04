@@ -1,16 +1,17 @@
-package utils;
+package com.mymusic.thief.utils;
 
 import java.util.Properties;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.collection.internal.PersistentBag;
-import org.hibernate.cfg.Configuration;
 
-import enities.Album;
-import enities.Artist;
-import enities.Song;
-import enities.SoundTrack;
+import com.mymusic.thief.entities.Album;
+import com.mymusic.thief.entities.Artist;
+import com.mymusic.thief.entities.Song;
+import com.mymusic.thief.entities.SoundTrack;
+
+import org.hibernate.cfg.Configuration;
 
 
 public class HibernateUtils {

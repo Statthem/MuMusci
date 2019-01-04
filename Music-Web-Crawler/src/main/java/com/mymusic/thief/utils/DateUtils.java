@@ -1,4 +1,4 @@
-package utils;
+package com.mymusic.thief.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
